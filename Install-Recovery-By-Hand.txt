@@ -1,0 +1,16 @@
+~ Install Recovery by Hand - Running Android ~
+
+Copy your recovery.img file to tablet (e.g. on your MicroSD-Card).
+
+Download and install a Terminal-App.
+
+Open The Terminal and type
+# su
+Grant root access.
+
+Copy to recovery partition:
+dd count=16384 bs=512 if=/external_sd/recovery.img of=/dev/block/mmcblk0p6
+
+(In this example "external_sd/" path and "recovery.img" the file name to "flash".
+
+After that, you can reboot to enter your recovery.
