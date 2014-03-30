@@ -1,0 +1,22 @@
+Backup-EFS by Hand
+Maybe you´ll never need it - but you´ll be more then happy if you need it and a backup exist.
+
+Download and run Terminal-Emulator:
+
+# su
+Grant root access.
+
+# busybox dd if=/dev/block/mmcblk0p1 of=/sdcard/efs.img bs=4096
+# exit
+
+You´ll find "efs.img" on your internal Storage, copy to your PC & on a 2nd Storage (e.g. usb-stick) and keep it safe.
+
+
+Restore EFS from "efs.img"
+
+Only in case you need it - don´t try it "just-for-fun".
+Open your Terminal-Emulator:
+
+# su
+# busybox dd if=/sdcard/efs.img of=/dev/block/mmcblk0p1 bs=4096
+# exit
