@@ -1,0 +1,18 @@
+# Create a new empty branch
+git checkout --orphan android-4.4
+git rm -rf .
+
+# different authorship to a commit
+git commit -a --author "andi34 <my@examlpe.com>"
+
+# change back authorship of last commit
+git commit --amend --author "andi34 <my@examlpe.com>"
+
+# change commit date
+git commit --amend --date "date-of-the-commit-and-time"
+
+# force update your branch - NOTE! This will change history!
+git push origin <branch_name> -f
+
+# remove last commit
+git reset --hard HEAD~1
