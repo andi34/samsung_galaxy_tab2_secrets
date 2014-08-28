@@ -1,0 +1,10 @@
+TARGET_PREBUILT_RECOVERY_KERNEL
+
+    recovery uses a given pre-built kernel. During compile, a kernel is compiled from sources though it will only be considered if we enable BOARD_CUSTOM_BOOTIMG_MK
+
+
+TARGET_PREBUILT_KERNEL
+
+    no kernel is compiled from sources, we use a pre-built. Recovery will use same unless specified by TARGET_PREBUILT_RECOVERY_KERNEL
+    using TARGET_PREBUILT_KERNEL can cause compile errors if we do not rename kernel folder (exp: kernel/lge/hammerhead): "acp: missing destination file". This happens when device and kernel have both same name (hlte, hammerhead...). In that case, either rename folder (will be re-downloaded on repo sync) or drop to TARGET_PREBUILT_RECOVERY_KERNEL
+    If TARGET_PREBUILT_KERNEL is used while kernel and device have same name, the actual used kernel is the compiled one, not prebuilt
