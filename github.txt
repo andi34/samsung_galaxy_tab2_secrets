@@ -16,3 +16,6 @@ git push origin <branch_name> -f
 
 # remove last commit
 git reset --hard HEAD~1
+
+# Use git diff but ignore whitespaces
+git diff -w --ignore-all-space PATH/1 PATCH/2 > diff.txt
