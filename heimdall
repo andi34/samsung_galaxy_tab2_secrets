@@ -1,0 +1,12 @@
+####################################
+# Print pit file
+sudo heimdall print-pit
+
+####################################
+# Flash recovery image
+
+# Galaxy Tab 2
+sudo heimdall flash --RECOVERY recovery.img
+
+# Samsung S3 mini (i8190)
+sudo heimdall flash --Kernel2 recovery.img
