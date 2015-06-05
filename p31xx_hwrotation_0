@@ -1,0 +1,21 @@
+[QUOTE=ketut.kumajaya;45070146]You could try another kernel with hwrotation=0. Maybe just odd behavior touchscreen and wrong orientation camera :D
+[CODE]
+# Galaxy Tab 2 7.0 auto rotation script
+# Ketut P. Kumajaya, June 2013
+
+# parsing build.prop
+if busybox [ $(busybox cat /system/build.prop | busybox grep -c ro.sf.hwrotation=270) -eq 1 ]; then
+  # make sure the touchcreen driver in portrait mode
+  echo 1 > /sys/devices/virtual/sec/tsp/pivot
+else
+  # make sure the touchcreen driver in landscape mode
+  echo 0 > /sys/devices/virtual/sec/tsp/pivot
+  # set accelerometer and geomagnetic sensor, landscape mode
+  position=$(busybox find /sys/devices/virtual/input/ -type f -name name | busybox xargs busybox grep '^accelerometer$' | busybox sed 's@name:accelerometer@position@')
+  echo -n 7 > $position
+  position=$(busybox find /sys/devices/platform/omap/omap_i2c.4/i2c-4/4-002e/input/ -type f -name name | busybox xargs busybox grep '^geomagnetic$' | busybox sed 's@name:geomagnetic@position@')
+  echo -n 7 > $position
+fi
+[/CODE]
+Since codeworkx added pivot mode to touchscreen driver + my fix for runtime setting, you can adapt above code as an init.d script using stock kernel.[/QUOTE]
+
