@@ -1,0 +1,20 @@
+How to fix denials?
+
+1. you need su permissions
+   $ adb root
+2. get a dmesg, but only show the denials:
+   $ adb shell su -c dmesg | grep 'avc: '
+
+  or
+
+   $ adb pull /data/misc/audit/audit.log
+
+   Note: the ones you see in the first, let's say, 60seconds are the most important to fix 
+         for refference https://source.android.com/devices/tech/security/selinux/validate.html 
+         Don'tuse audit2allow, but this might help you to understand how to create policies.
+
+3. keep on looking for the avc denials, not all get shown on boot..
+   you might see some like 10 minutes after, who knows lol
+
+4. That's how it works:
+   allow %scontext %tcontext:%typ { %what };
