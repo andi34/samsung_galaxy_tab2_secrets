@@ -50,6 +50,9 @@ $ adb shell dmesg > dmesg.txt
 last_kmsg:
 $ adb shell su -c "cat /proc/last_kmsg" > last_kmsg.txt
 
+audit.log
+$ adb pull /data/misc/audit/audit.log
+
 
 4. Rom installation failed on "error 7" in recovery, what can i do?
 Best will be to post a recovery.log. There's an option inside your recovery to create one.
