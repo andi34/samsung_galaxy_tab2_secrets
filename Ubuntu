@@ -1,0 +1,23 @@
+**********************
+Shutdown via Terminal
+**********************
+
+System "sanft" Herunterfahren (beendet die laufenden Prozesse):
+
+$ sudo shutdown -h now
+
+System "hart" Herunterfahren (Prozesse werden unterbrochen):
+
+$sudo halt -p
+
+System herunterfahren und den Rechner ausschalten:
+
+$ sudo shutdown -P now
+
+System in 30 Minuten herunterfahren (Minuten können beliebig gesetzt werden):
+
+$ sudo shutdown -h +30
+
+System um eine bestimmte Uhrzeit herunterfahren, z.B. 21 Uhr 15 Minuten :
+
+$ sudo shutdown -h 21:15
