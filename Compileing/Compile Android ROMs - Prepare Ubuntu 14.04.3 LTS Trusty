@@ -1,0 +1,129 @@
+
+How to Prepare Ubuntu 14.04.3 LTS Trusty Tahr to Compile Android ROMs
+Posted on February 7, 2014 by sylentprofet	
+
+— If you would rather use a ready-to-go Virtual Machine based on these instructions, check out my post here. —
+
+With a new version of Ubuntu comes an update to my world-famous guide for setting up a build environment to compile Android ROMs. 
+14.04 Trusty Tahr is the next Long Term Support edition of the popular Linux distro. 
+The aim of this guide is to simplify the configuration process for you.
+
+Follow the directions step-by-step. All you have to do is copy and paste the code sections in order and you will be up and running in no time!
+
+This guide applies to all variations of Ubuntu 14.04 LTS Trusty Tahr 64 bit. Do not use the 32 Bit version.
+
+Also, PAY CLOSE ATTENTION when to use “sudo” and when to not. It can make things funky if you do something as root that you shouldn’t.
+
+Much thanks goes out to Google, ProTekk, Canonical, and everyone else that I read a random paragraph here and snippet there.
+
+Ready to begin? Ok.
+
+1) Unless it’s a completely fresh Ubuntu installation, many of you have the wrong version of Java installed. Let’s fix that first.
+
+The command below makes sure you’re starting with a clean slate. Copy and paste it into a terminal (command prompt) window:
+
+$ sudo apt-get purge openjdk-\* icedtea-\* icedtea6-\*
+
+If necessary, follow the on-screen instructions to remove OpenJDK. Otherwise, move on to the next step.
+
+*** IF YOU ARE BUILDING ANDROID GINGERBREAD THRU KITKAT (2.3 - 4.4.x) USE THESE INSTRUCTIONS FOR JDK 6***
+2) Copy and paste the following into the terminal:
+
+$ sudo add-apt-repository ppa:webupd8team/java
+
+This will add the correct PPA to your system for updated builds of Java 6 JDK that are compatible with 14.04.
+
+2.2) Now you need to install the package. More copy-paste:
+
+$ sudo apt-get update && sudo apt-get install oracle-java6-installer
+
+Follow the on-screen instructions. You must accept the Licensing Agreement to complete the install.
+
+Press Enter to acknowledge the “OK”, then tab over to “Yes” and press Enter again to accept the license. 
+The installation will continue automatically.
+
+*** IF YOU ARE BUILDING ANDROID L AND ABOVE (CURRENT AOSP MASTER BRANCH) USE THESE INSTRUCTIONS FOR JDK 7***
+$ sudo apt-get update && sudo apt-get install openjdk-7-jdk
+
+3) Let’s make sure the correct version of Java is activated. Run the terminal command:
+
+$ java -version
+
+You should see something like:
+
+java version “1.6.0_45″
+Java(TM) SE Runtime Environment (build 1.6.0_45-b06)
+Java HotSpot(TM) 64-Bit Server VM (build 20.45-b01, mixed mode)
+
+4) Back to a fresh terminal prompt. Install the main build tools with this command:
+
+$ sudo apt-get install git ccache automake lzop bison gperf build-essential zip \
+        curl zlib1g-dev zlib1g-dev:i386 g++-multilib python-networkx libxml2-utils \
+        bzip2 libbz2-dev libbz2-1.0 libghc-bzlib-dev squashfs-tools pngcrush schedtool \
+        dpkg-dev liblz4-tool make optipng
+
+5) When those are done installing, run the next line in your terminal window:
+
+$ sudo ln -s /usr/lib/i386-linux-gnu/mesa/libGL.so.1 /usr/lib/i386-linux-gnu/libGL.so
+
+That’s it on the package side of things. You guessed it, time for more Terminal. This really is the easiest way, I promise.
+
+6) A program called “repo” lets you communicate with git servers and download all that precious source code. The next command will install it:
+
+$ mkdir ~/bin && curl http://commondatastorage.googleapis.com/git-repo-downloads/repo > ~/bin/repo && chmod a+x ~/bin/repo
+
+7) Use your favorite text editor to open ~/.bashrc – I like nano:
+
+$ sudo nano ~/.bashrc
+
+8) At the very bottom (use the Page Down key) paste this code to a new (empty) line:
+
+export PATH=~/bin:$PATH
+
+9) Save it. In nano that would be Ctrl-O and then Enter. Then Ctrl-X to exit back to a prompt. Restart bash:
+
+$ source ~/.bashrc
+
+10) In the terminal, navigate to where you would like to download the Android source code. The commands below will make it in your home folder, 
+but if you have limited space you may want to create it somewhere else. Faster is better, i.e. SSD would be best, USB external is basically unusable. 
+Here we go:
+
+$ mkdir ~/android
+$ cd ~/android
+
+11) Now you’re going to initialize the repo. This is where you decide the flavor of Android you want to build, i.e. AOKP, CyanogenMod, AOSP etc.
+
+For the purposes of the tutorial, here’s the command for AOKP KitKat:
+
+$ repo init -u git://github.com/AOKP/platform_manifest.git -b kitkat
+
+12) Almost there. Last step, it’s a doozy. Time to get the source. Prepare yourself, 10+ GB of downloading await.
+
+Don’t worry, it’s automated. Go to sleep. Eat something. Perhaps you have heard of this new thing the kids are doing called “going outside”? 
+Yeah, I didn’t think so. Me neither.
+
+Hey everyone, it’s the final terminal command:
+
+$ repo sync
+
+Check back periodically every hour or so. It all depends on how fast your connection is.
+
+That should be everything. Now you’re ready to build Android the right way. Good luck!
+
+Feel free to buy me a coconut water (donate) if you like my project. 
+It would be greatly appreciated!
+
+------------------------------------
+For those of you that want to build Lollipop (which requires JDK 1.7) but already have your system configured for GB-KK (JDK 1.6), here's the easiest way to update your system:
+
+First, install OpenJDK7. At a terminal:
+
+$ sudo apt-get install openjdk-7-jdk
+
+Once that completes, you simply need to tell Linux to use the newer version of Java and Java Compiler to render content. Run the following two commands separately, making the correct selection for OpenJDK 1.7 both times when prompted. Again in the terminal:
+
+$ sudo update-alternatives --config java
+$ sudo update-alternatives --config javac
+
+
+http://forum.xda-developers.com/showthread.php?t=2639611
