@@ -51,6 +51,8 @@ last_kmsg:
 $ adb shell su -c "cat /proc/last_kmsg" > last_kmsg.txt
 
 audit.log
+(make sure root is enabled!)
+$ adb root
 $ adb pull /data/misc/audit/audit.log
 
 
