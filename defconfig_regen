@@ -1,0 +1,34 @@
+# Regenerate defconfigs SlimRoms
+
+cd kernel/samsung/espresso10
+export SUBARCH=arm
+export ARCH=arm
+make mrproper && make slim_p3100_defconfig && mv .config arch/arm/configs/slim_p3100_defconfig
+make mrproper && make slim_p3110_defconfig && mv .config arch/arm/configs/slim_p3110_defconfig
+make mrproper && make slim_p5100_defconfig && mv .config arch/arm/configs/slim_p5100_defconfig
+make mrproper && make slim_p5110_defconfig && mv .config arch/arm/configs/slim_p5110_defconfig
+make mrproper
+
+
+# Regenerate defconfigs OmniROM
+
+cd kernel/samsung/espresso10
+export SUBARCH=arm
+export ARCH=arm
+make mrproper && make custom_p3100_defconfig && mv .config arch/arm/configs/custom_p3100_defconfig
+make mrproper && make custom_p3110_defconfig && mv .config arch/arm/configs/custom_p3110_defconfig
+make mrproper && make custom_p5100_defconfig && mv .config arch/arm/configs/custom_p5100_defconfig
+make mrproper && make custom_p5110_defconfig && mv .config arch/arm/configs/custom_p5110_defconfig
+make mrproper
+
+
+# Regenerate defconfigs CyanogenMod
+
+cd kernel/samsung/espresso10
+export SUBARCH=arm
+export ARCH=arm
+make mrproper && make cyanogenmod_p3100_defconfig && mv .config arch/arm/configs/cyanogenmod_p3100_defconfig
+make mrproper && make cyanogenmod_p3110_defconfig && mv .config arch/arm/configs/cyanogenmod_p3110_defconfig
+make mrproper && make cyanogenmod_p5100_defconfig && mv .config arch/arm/configs/cyanogenmod_p5100_defconfig
+make mrproper && make cyanogenmod_p5110_defconfig && mv .config arch/arm/configs/cyanogenmod_p5110_defconfig
+make mrproper
