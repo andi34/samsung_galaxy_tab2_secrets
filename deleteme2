@@ -1,0 +1,263 @@
+Commits on Jun 24, 2012 
+ASoC: wm_hubs: Cache multiple DCS offsets
+git cherry-pick d3013e8e48be6a4fdb1f47371c9c1cbb0bef0441
+ASoC: wm_hubs: Enable class W for output mixer paths
+git cherry-pick 276ce0880d29a525a1a30cbdd8c145cf901ca24a
+ASoC: wm_hubs: Factor out class W management
+git cherry-pick 59d9e568b6352efbdaa9fc7e3ecb90d7944140de
+ASoC: wm_hubs: Special case headphones for digital paths in more use
+git cherry-pick 203c0f13ff8347398bbb4c4a2ae341928d5ba689
+ASoC: wm8994: Allow rate configuration with custom mic callback
+git cherry-pick 8939cf94409af53416c86896030730c5918bd297
+ASoC: wm8994: Tune debounce rates for jack detect mode
+git cherry-pick 2a45bafbec2996c9ceffe3ae3fb6216cdddd3a5d
+ASoC: wm8994: Keep AIF3 tristated when not in use
+git cherry-pick c672f6c2062673c59841f472b8b0af9fef0dfd93
+ASoC: wm8994: Implement FLL bypass support
+git cherry-pick 7f3473eaee5493c56f5ff2a6cf934ee702cdf1d4
+ASoC: wm8994: Delete trailing whitespace from sound/soc/codecs/wm8994.c
+git cherry-pick 74635580d0c9bf8ba8f610ce0b76189737367dc4
+ASoC: wm8994: Don't allow reconfiguration of FLL when it provides SYSCLK
+git cherry-pick 556fa60b43ab1335dfde4e9597ac9389455c4798
+(PARTIALLY) mfd: wm8994: Restore pin configuration after reset during…
+git cherry-pick 4b9391ac94b47faa40f3b315283b41b0f7f4cf43
+mfd: Support for user defined wm8994 irq flags
+git cherry-pick b9dfc89bcbb0803784f67ba8806d85b088772909
+mfd: Read CUST_ID from the wm8994 device
+git cherry-pick b6423a5deaae140fad4833647f0bcef995bd7b27
+
+
+Commits on Jun 24, 2012 / Commits on Jun 17, 2012 
+ASoC: wm8994: Apply volume updates with clocks enabled
+git cherry-pick 905093e1810fa20db7f2d1f364e6e0273bbb7041
+(38a3c37777b7a0864b70480067b8606100139c11)
+
+
+Commits on Jun 17, 2012
+ASoC: wm8994: Ensure all AIFnCLK events are run from the _late variants
+git cherry-pick 2d539f9e66ea9aaf4998e98fbfe719f99d5f6590
+
+Commits on Apr 23, 2012
+ASoC: wm8994: Improve sequencing of AIF channel enables
+git cherry-pick 1a38336b8611a04f0a624330c1f815421f4bf5f4
+
+Commits on Mar 19, 2012 
+ASoC: wm8994: Provide VMID mode control and fix default sequence
+git cherry-pick 22f8d055350066b4a87de4adea8c5213cac54534
+ASoC: wm8994: Add missing break in resume
+git cherry-pick 6f8270cc9a43d767676c97df5773fdcede312a88
+
+Commits on Mar 6, 2012 
+ASoC: wm8994: Use audio mode for jack detection when system is active
+git cherry-pick 4752a887190ff38175be47aae26a821e8941b96e
+
+Commits on Mar 4, 2012
+ASoC: wm8994: Factor out WM1811A detection mode setting
+git cherry-pick 1defde2a50f9171e665cc8f4c46fe48e86bb364e
+ASoC: wm8994: Don't bother updating the jackdet mode needlessly
+git cherry-pick 28e33269a71cb4104c2e0629b6a3ef7344436f93
+ASoC: wm8994: Disable JACKDET when disabling detecton
+git cherry-pick afaf1591203e4ea12c4c8e0240549ff5e592d7ae
+ASoC: wm8994: Make sure we sync DAPM on WM8958 detection mode changes
+git cherry-pick 7d464b201fd2f82902028437314a10db85e48ed8
+ASoC: wm_hubs: Disable cache of the DC servo calibration for WM1811
+git cherry-pick 67109cbea1f92d369849dc88b6c9aca0f66c044e
+ASoC: wm8994: Suppress noop updates of FLL K
+git cherry-pick b16db745b51a1ecd3fd526a2ff35d61f2962bd7f
+
+Commits on Mar 1, 2012
+ASoC: wm_hubs: Bomb out if we can't read back the DC servo result
+git cherry-pick e778ba07edd03bc5000e22bc72113e06a7ded694
+
+Commits on Feb 22, 2012 
+ASoC: wm8994: Move wm_hubs callback before we start ramping VMID
+git cherry-pick f7085641eeaeaab5216bab143287d2288940d9a2
+
+
+Commits on Feb 21, 2012 
+ASoC: wm8994: Support external capacitors on MICBIAS2 with jack detec… 
+git cherry-pick 07fb9d9e935a07aaed557c58d795c18fcd99aab4
+ASoC: wm8994: Actively discharge idle MICBIAS with jack detect
+git cherry-pick 55a27786856458a785e1ed7221aee22a06def877
+ASoC: wm8994: Enable headphone startup mode 1 for WM1811 and WM8958
+git cherry-pick 29fdc3605c947d037f3333afe3c295f8708640b0
+ASoC: wm_hubs: Convert headphone driver to output driver widget
+git cherry-pick 26422625d55d94f60e48fa62e05f3b5aa5ad98f4
+
+Commits on Feb 15, 2012 
+ASoC: wm8994: Use slow start for VMID
+git cherry-pick 65f01ef09ee601aa04dfbe6c4f08193668461a6b
+
+Commits on Feb 12, 2012 
+ASoC: wm8994: Actively discharge VMID when not in use
+git cherry-pick e85b26ce3a4cda67262ae6f7d918a63fd4dc153c
+ASoC: wm8994: VMID management improvements
+git cherry-pick cc6d5a8c2b8c1a04c91bac0a5be02e64307518eb
+ASoC: wm_hubs: Clamp inputs to VMID while we ramp
+git cherry-pick d60d6c3b65fa2156ec95d96f73e34cdb0c586458
+ASoC: wm_hubs: Improve single ended line output enable performance
+git cherry-pick 5f2f38904019bbffb107767c55d9e781c94941ef
+
+Commits on Feb 8, 2012 
+ASoC: wm8994: Disable line output discharge prior to ramping VMID
+git cherry-pick a7c4183be2d6a7da8c97a9b671b5f3aed321127e
+ASoC: wm8994: Fix typo in VMID ramp setting
+git cherry-pick f647e1526fd6c7c8ab720781c40d11e11f930e93
+
+Commits on Feb 7, 2012 
+ASoC: wm_hubs: Convert most output drivers to OUT_DRV widgets
+git cherry-pick dc9c745437fc0d3ce7b2bd71594ea5ac48187f26
+
+Commits on Feb 6, 2012 
+ASoC: wm8994: Enabling VMID should take a runtime PM reference
+git cherry-pick db966f8abb9ba74f7d5a7230f51572f52c31c4e5
+
+Commits on Dec 20, 2011
+mfd: Update wm8994 active device checks for WM1811
+git cherry-pick b5488b6e868454fb10d23278de5038cda98b13ab
+
+Commits on Dec 12, 2011
+(PARTIALLY) mfd: Mark WM1811 GPIO6 register volatile for later revisions
+git cherry-pick 7ed5849c2861faf9c13f027868f635bd782a50e5
+mfd: Correct revision display for WM1811 revision D 
+git cherry-pick 7ed5849c2861faf9c13f027868f635bd782a50e5
+mfd: Disable more pulls on WM8994
+git cherry-pick 26c34c25e54b4a352596d88c6e44a239dab8e1c5
+
+Commits on Dec 2, 2011
+ASoC: Drop unused state parameter from CODEC suspend callback
+git cherry-pick 84b315ee893676e9a9ce8ac42ab5ef44e2af3ee1
+Commits on Dec 2, 2011
+ASoC: Mark WM8994 ADC muxes as virtual
+git cherry-pick 87b86ade8bb07473596e2551de7bb64c1f44bbe4
+
+Commits on Dec 1, 2011
+mfd: Test for jack detection when deciding if wm8994 should suspend
+git cherry-pick a3462490b4d354c94031bfe644c65d374fc04aa6
+ASoC: Add platform data for WM8958/WM1811 microphone detection rates
+git cherry-pick cd1707a99a2cb43cd8ab0c1952b455b218f15884
+ASoC: Ensure we reconfigure WM8958 microphone detection on rate changes
+git cherry-pick 52ac7ab2475da2b577e4a4616c98b5d1fa3a3cfd
+ASoC: Implement support for WM1811A jack detection
+git cherry-pick af6b6fe41c4bc9e7933d66bbbf5106e0e7e6e484
+ASoC: Rename WM8994 detecting flag to mic_detecting
+git cherry-pick 157a75e664f8c811c660de1d1b9abb16a1f72579
+ASoC: Allow more WM8958/WM1811 button levels with default handler
+git cherry-pick 4585790d1cde32a5719c24412e9845e031358e08
+ASoC: Tune down active mode detection rate for WM8958 mic detection
+git cherry-pick 604533de0f60c3be6ae99fdaf44d1d79f38b307e
+
+Commits on Nov 30, 2011 
+ASoC: Provide debug log of accessory status on WM8958
+git cherry-pick a1691343a397157dd5f67bce50435f64024a462d
+
+Commits on Nov 29, 2011 
+ASoC: Enhance default WM8958 microphone detection
+git cherry-pick b00adf76a6fa492c39f8225fc42debc01bbbdc1d
+ASoC: Put WM8958 and WM1811 MICBIAS into bypass mode when no audio
+git cherry-pick 500fa30ed5795a1d8e8539d0cd81f73b34f831a3
+ASoC: Ensure SYSCLK is enabled for WM8958 accessory detection
+git cherry-pick 4cdf5e49ce8ff79038ee5388cc5f97097238bb29
+
+Commits on Nov 5, 2011 
+ASoC: Disable thermal shutdown when not using speakers in wm_hubs
+git cherry-pick 03431972ac16bbfcbfb831bb37c419f8f71bf16d
+Commits on Nov 5, 2011 
+ASoC: Ensure we get an impedence reported for WM8958 jack detect
+git cherry-pick 19940b3d55c87d8089a8cb0fa8e5a9918a3846bd
+ASoC: Add bitfield definitions for WM8958 MICBIAS registers 
+git cherry-pick c18eee31812d42ecd0aa5c39d21d41c15b30eaab
+
+
+Commits on Oct 24, 2011
+mfd: Add more checks for WM8994 being active during suspend
+git cherry-pick 5f40c6b6508b622ea03c6b32c57b2e26eba2e4f1
+mfd: Allow WM8994 LDO enable pulls to be disabled
+git cherry-pick 881de67046f424fc3a6e05b1c681c12afd94e802
+
+Commits on Oct 4, 2011
+ASoC: wm8994: Slightly optimize configure_clock
+git cherry-pick 04f45c493ac6de7c3d1864c3193c225424c25b7d
+ASoC: Add WM1811 support
+git cherry-pick 81204c84ca46604a04ab3d43ccfa1e464e6b1303
+mfd: Add WM1811 support
+git cherry-pick b1f43bf3a52b085b786adf0b719712df574955f9
+
+
+Commits on Aug 17, 2011
+ASoC: Fix backport of WM8994 thermal warning
+git cherry-pick 60e3ee62af12e7c5d91153ce724956254a857c2e
+
+Commits on Aug 16, 2011
+ASoC: Implement WM8994 thermal warning and shutdown interrupt support
+git cherry-pick f0b182b003e22320efac5a33cacc460e0079c135
+ASoC: Add WM8958 noise gate support
+git cherry-pick 1ddc07d0f13a753f8e345e0538562e1899d2bc26
+
+Commits on Aug 15, 2011 
+ASoC: Disable pulls on WM8994 AIF2 when starting it
+git cherry-pick d09f3ecf1a7ba658934fa3c45f67ed2620a50950
+
+Commits on Aug 14, 2011 
+ASoC: Disable WM8994 VMID for digital only paths
+git cherry-pick 4b7ed83aa3c7f4b9fe363875440836e0f2aabbdf
+ASoC: Add VMID widget for wm_hubs devices
+git cherry-pick 4e04adaf87c678425b8009c5f208d9acfc1530ab
+
+Commits on Aug 11, 2011 
+ASoC: Add missing break in WM8994 probe
+git cherry-pick 280ec8b718e8565333ace339d6bba91239440b20
+
+Commits on Aug 1, 2011 
+ASoC: Implement new DC servo readback mode for late WM8994 revisions
+git cherry-pick 79ef0abcd85842bc12ffb3297b958565f060464c
+
+Commits on Jul 31, 2011
+mfd: Acknowledge WM8994 IRQs before reporting
+git cherry-pick ccd80c7142ba178f5395fe69244e6c4611100511
+mfd: Fix error handling if BUG() isn't enabled in WM8994
+git cherry-pick f85dbda076a11c18b396f8acfff929e53159e56d
+mfd: Fix WM8994 IRQ register cache restore on resume
+git cherry-pick 98ae1ccaf62d5006884e01159bf7a63174b0fc03
+mfd: Restructure wm8994-core device revision handling
+git cherry-pick a2495bc727e2dd8421fb85c80e38f9a4a4c1e58e
+
+Commits on Jul 15, 2011 
+ASoC: Handle spurious wm_hubs DC servo done interrupts
+git cherry-pick 1479c3fb5f0ca8410428006cb04ca27263beea25
+
+Commits on Jul 17, 2011
+ASoC: Handle failed WM8994 FLL lock waits
+git cherry-pick f0f5039c3dcc6f80756128aa38f2a4f5b895bbf1
+
+Commits on Jul 14, 2011
+ASoC: Log WM8994 FIFO errors from the interrupt
+git cherry-pick 3b1af3f8c8f3298170fcbf6ef7971c3aeccc4318
+
+Commits on Jul 13, 2011
+ASoC: Don't warn on low WM8994/58 AIFnCLKs
+git cherry-pick f05bdb8bb6c5e34a9c8c12483022e4cac5133139
+ASoC: Use WM8994 FLL lock interrupt
+git cherry-pick c7ebf932e5afa9caf8720435519b857b5d6e63bc
+ASoC: Hook up DC servo completion IRQ for WM8994 and WM8958
+git cherry-pick b30ead5f391d34c6011e6affe88eb21bb0b9f9dd
+ASoC: Implement DC servo completion IRQ handling for wm_hubs devices
+git cherry-pick d96ca3cd0bcefdcd1d9ad1f2610dcd959fccd252
+ASoC: Use late enable handling for direct voice, speaker and headphone
+git cherry-pick b70a51bab9c64d2cabf7c052ebb3f5db2801fd05
+
+Commits on Jul 9, 2011
+ASoC: Conditionalize the enable of WM8994 ADC TDM mode
+git cherry-pick 5b7396709e0b2d43527024316e0bc4630759bcf3
+
+Commits on Jun 29, 2011
+ASoC: Correct left/right swap in wm_hubs DC offset correction
+git cherry-pick d5b040c92da5ae4d5d39987850d17304e17d8e79
+
+Commits on Jun 23, 2011 
+ASoC: Allow suppression of series updates on wm_hubs devices
+git cherry-pick 780b75b4a0c3d6817cb2ef9493c1d1826cd6fc6b
+
+Commits on Jun 23, 2011
+ASoC: Trigger wm_hubs series update startup off a separate flag 
+git cherry-pick f9acf9fe5be653aa359c75d60fdaff03bf1ef471
