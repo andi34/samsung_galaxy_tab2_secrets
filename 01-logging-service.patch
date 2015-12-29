@@ -1,0 +1,60 @@
+From 95e67e8786014e508c536736a447c4210c2a628f Mon Sep 17 00:00:00 2001
+From: Brinly Taylor <uberlaggydarwin@gmail.com>
+Date: Wed, 14 Jan 2015 11:36:06 +1030
+Subject: [PATCH] add logging service
+
+This simply sends the logcat to storage so you can reboot into recovery and grab a log.
+
+Change-Id: Ibed3a2d849a95391382d07b13684acfd49aa1218
+---
+ rootdir/Android.mk              | 9 +++++++++
+ rootdir/etc/init.byt_t_ffrd8.rc | 5 +++++
+ rootdir/etc/loggy.sh            | 6 ++++++
+ 3 files changed, 20 insertions(+)
+ create mode 100644 rootdir/etc/loggy.sh
+
+diff --git a/rootdir/Android.mk b/rootdir/Android.mk
+index 623bfa1..ec62012 100644
+--- a/rootdir/Android.mk
++++ b/rootdir/Android.mk
+@@ -207,3 +207,12 @@ LOCAL_MODULE_CLASS := ETC
+ LOCAL_SRC_FILES    := sbin/uefivar_nolog
+ LOCAL_MODULE_PATH  := $(TARGET_ROOT_OUT)/sbin
+ include $(BUILD_PREBUILT)
++
++# testing for logs
++include $(CLEAR_VARS)
++LOCAL_MODULE		:= loggy.sh
++LOCAL_MODULE_TAGS	:= optional eng
++LOCAL_MODULE_CLASS	:= ETC
++LOCAL_SRC_FILES		:= etc/loggy.sh
++LOCAL_MODULE_PATH	:= $(TARGET_ROOT_OUT)
++include $(BUILD_PREBUILT)
+diff --git a/rootdir/etc/init.byt_t_ffrd8.rc b/rootdir/etc/init.byt_t_ffrd8.rc
+index 4605bb7..7a5df89 100755
+--- a/rootdir/etc/init.byt_t_ffrd8.rc
++++ b/rootdir/etc/init.byt_t_ffrd8.rc
+@@ -141,6 +141,11 @@ on boot
+     write /proc/sys/vm/dirty_background_bytes 25165824
+ 
+ on post-fs-data
++service loggy /system/bin/sh  /loggy.sh
++    class main
++    user root
++    oneshot
++
+     # we will remap this as /mnt/sdcard with the sdcard fuse tool
+     mkdir /data/media 0770 media_rw media_rw
+     chown media_rw media_rw /data/media
+diff --git a/rootdir/etc/loggy.sh b/rootdir/etc/loggy.sh
+new file mode 100644
+index 0000000..497e8e4
+--- /dev/null
++++ b/rootdir/etc/loggy.sh
+@@ -0,0 +1,6 @@
++#!/bin/sh
++# loggy.sh.
++
++date=`date +%F_%H-%M-%S`
++lsmod > /storage/sdcard0/lsmod_${date}.txt
++logcat -v time -f  /storage/sdcard0/logcat_${date}.txt
