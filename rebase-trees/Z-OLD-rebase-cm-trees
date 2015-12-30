@@ -1,0 +1,59 @@
+git clone https://github.com/andi34/android_device_samsung_p5110.git p5110
+cd p5110
+git checkout cm-11.0
+git checkout cm-12.1
+git checkout cm-10.2
+git branch -D cm-11.0
+git branch -D cm-12.1
+git checkout --orphan cm-11.0
+git rm -rf .
+git pull https://github.com/CyanogenMod/android_device_samsung_p5110.git cm-11.0
+git checkout --orphan cm-12.1
+git rm -rf .
+git pull https://github.com/CyanogenMod/android_device_samsung_p5110.git cm-12.1
+git push -f
+
+git clone https://github.com/andi34/android_device_samsung_p5100.git p5100
+cd p5100
+git checkout cm-11.0
+git checkout cm-12.1
+git checkout cm-10.2
+git branch -D cm-11.0
+git branch -D cm-12.1
+git checkout --orphan cm-11.0
+git rm -rf .
+git pull https://github.com/CyanogenMod/android_device_samsung_p5100.git cm-11.0
+git checkout --orphan cm-12.1
+git rm -rf .
+git pull https://github.com/CyanogenMod/android_device_samsung_p5100.git cm-12.1
+git push -f
+
+git clone https://github.com/andi34/android_device_samsung_p3110.git p3110
+cd p3110
+git checkout cm-11.0
+git checkout cm-12.1
+git checkout cm-10.2
+git branch -D cm-11.0
+git branch -D cm-12.1
+git checkout --orphan cm-11.0
+git rm -rf .
+git pull https://github.com/CyanogenMod/android_device_samsung_p3110.git cm-11.0
+git checkout --orphan cm-12.1
+git rm -rf .
+git pull https://github.com/CyanogenMod/android_device_samsung_p3110.git cm-12.1
+git push -f
+
+git clone https://github.com/andi34/android_device_samsung_p5110.git p5110
+cd p5110
+git checkout cm-11.0
+git checkout cm-12.1
+git checkout cm-10.2
+git branch -D cm-11.0
+git branch -D cm-12.1
+git checkout --orphan cm-11.0
+git rm -rf .
+git pull https://github.com/CyanogenMod/android_device_samsung_p5110.git cm-11.0
+git checkout --orphan cm-12.1
+git rm -rf .
+git pull https://github.com/CyanogenMod/android_device_samsung_p5110.git cm-12.1
+git push -f

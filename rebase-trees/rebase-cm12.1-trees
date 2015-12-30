@@ -1,0 +1,26 @@
+cd ~/android/cm-12.1
+repo sync -j16
+
+cd ~/android/cm-12.1/device/samsung/espresso-common
+git push https://github.com/andi34/device_samsung_espresso-common.git HEAD:cm-12.1 -f
+
+cd ~/android/cm-12.1/device/samsung/omap4-common
+git push https://github.com/andi34/device_samsung_omap4-common.git HEAD:cm-12.1 -f
+
+cd ~/android/cm-12.1/device/samsung/p3100
+git push https://github.com/andi34/android_device_samsung_p3100.git HEAD:cm-12.1 -f
+
+cd ~/android/cm-12.1/device/samsung/p3110
+git push https://github.com/andi34/android_device_samsung_p3110.git HEAD:cm-12.1 -f
+
+cd ~/android/cm-12.1/device/samsung/p5100
+git push https://github.com/andi34/android_device_samsung_p5100.git HEAD:cm-12.1 -f
+
+cd ~/android/cm-12.1/device/samsung/p5110
+git push https://github.com/andi34/android_device_samsung_p5110.git HEAD:cm-12.1 -f
+
+cd ~/android/cm-12.1/hardware/ti/omap4
+git push https://github.com/andi34/android_hardware_ti_omap4.git HEAD:cm-12.1 -f
+
+cd ~/android/cm-12.1/hardware/samsung
+git push https://github.com/andi34/hardware_samsung.git HEAD:cm-12.1 -f
