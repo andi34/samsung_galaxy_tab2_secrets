@@ -1,0 +1,215 @@
+#!/bin/bash
+echo "----------------------------------------"
+echo " S E C U R I T Y  F I R S T ! ! ! ! "
+echo "----------------------------------------"
+echo "----------------------------------------"
+
+cd build
+git checkout aosp-4.4
+echo "DO NOT MERGE - Backport of ag/748221 - Security Patch Level in Settings CL#2/3"
+git fetch https://gerrit.omnirom.org/android_build refs/changes/06/15606/1 && git cherry-pick FETCH_HEAD
+echo "----------------------------------------"
+echo "Update security string to 2015-12-01 - DO NOT MERGE"
+git fetch https://gerrit.omnirom.org/android_build refs/changes/98/16198/1 && git cherry-pick FETCH_HEAD
+git push https://github.com/OMAP4-AOSP/android_build.git HEAD:aosp-4.4
+cd ../..
+
+cd frameworks/av
+git checkout -b aosp-4.4
+git fetch https://gerrit.omnirom.org/android_frameworks_av refs/changes/83/14683/1 && git cherry-pick FETCH_HEAD
+git fetch https://gerrit.omnirom.org/android_frameworks_av refs/changes/84/14684/1 && git cherry-pick FETCH_HEAD
+git fetch https://gerrit.omnirom.org/android_frameworks_av refs/changes/85/14685/1 && git cherry-pick FETCH_HEAD
+git fetch https://gerrit.omnirom.org/android_frameworks_av refs/changes/86/14686/1 && git cherry-pick FETCH_HEAD
+git fetch https://gerrit.omnirom.org/android_frameworks_av refs/changes/87/14687/1 && git cherry-pick FETCH_HEAD
+git fetch https://gerrit.omnirom.org/android_frameworks_av refs/changes/88/14688/1 && git cherry-pick FETCH_HEAD
+git fetch https://gerrit.omnirom.org/android_frameworks_av refs/changes/89/14689/1 && git cherry-pick FETCH_HEAD
+git fetch https://gerrit.omnirom.org/android_frameworks_av refs/changes/90/14690/1 && git cherry-pick FETCH_HEAD
+git fetch https://gerrit.omnirom.org/android_frameworks_av refs/changes/66/14866/1 && git cherry-pick FETCH_HEAD
+git fetch https://gerrit.omnirom.org/android_frameworks_av refs/changes/67/14867/1 && git cherry-pick FETCH_HEAD
+git fetch https://gerrit.omnirom.org/android_frameworks_av refs/changes/68/14868/1 && git cherry-pick FETCH_HEAD
+git fetch https://gerrit.omnirom.org/android_frameworks_av refs/changes/69/14869/1 && git cherry-pick FETCH_HEAD
+echo "last conflicts"
+git fetch https://gerrit.omnirom.org/android_frameworks_av refs/changes/16/14916/1 && git cherry-pick FETCH_HEAD
+git fetch https://gerrit.omnirom.org/android_frameworks_av refs/changes/17/14917/1 && git cherry-pick FETCH_HEAD
+git fetch https://gerrit.omnirom.org/android_frameworks_av refs/changes/18/14918/1 && git cherry-pick FETCH_HEAD
+git fetch https://gerrit.omnirom.org/android_frameworks_av refs/changes/19/14919/1 && git cherry-pick FETCH_HEAD
+git fetch https://gerrit.omnirom.org/android_frameworks_av refs/changes/20/14920/1 && git cherry-pick FETCH_HEAD
+git fetch https://gerrit.omnirom.org/android_frameworks_av refs/changes/21/14921/1 && git cherry-pick FETCH_HEAD
+git fetch https://gerrit.omnirom.org/android_frameworks_av refs/changes/22/14922/1 && git cherry-pick FETCH_HEAD
+git fetch https://gerrit.omnirom.org/android_frameworks_av refs/changes/23/14923/1 && git cherry-pick FETCH_HEAD
+git fetch https://gerrit.omnirom.org/android_frameworks_av refs/changes/24/14924/1 && git cherry-pick FETCH_HEAD
+git fetch https://gerrit.omnirom.org/android_frameworks_av refs/changes/25/14925/1 && git cherry-pick FETCH_HEAD
+git fetch https://gerrit.omnirom.org/android_frameworks_av refs/changes/26/14926/1 && git cherry-pick FETCH_HEAD
+git fetch https://gerrit.omnirom.org/android_frameworks_av refs/changes/27/14927/1 && git cherry-pick FETCH_HEAD
+git fetch https://gerrit.omnirom.org/android_frameworks_av refs/changes/28/14928/1 && git cherry-pick FETCH_HEAD
+git fetch https://gerrit.omnirom.org/android_frameworks_av refs/changes/29/14929/1 && git cherry-pick FETCH_HEAD
+git fetch https://gerrit.omnirom.org/android_frameworks_av refs/changes/30/14930/1 && git cherry-pick FETCH_HEAD
+git fetch https://gerrit.omnirom.org/android_frameworks_av refs/changes/31/14931/1 && git cherry-pick FETCH_HEAD
+git fetch https://gerrit.omnirom.org/android_frameworks_av refs/changes/32/14932/1 && git cherry-pick FETCH_HEAD
+git fetch https://gerrit.omnirom.org/android_frameworks_av refs/changes/33/14933/1 && git cherry-pick FETCH_HEAD
+git fetch https://gerrit.omnirom.org/android_frameworks_av refs/changes/34/14934/1 && git cherry-pick FETCH_HEAD
+git fetch https://gerrit.omnirom.org/android_frameworks_av refs/changes/35/14935/1 && git cherry-pick FETCH_HEAD
+git fetch https://gerrit.omnirom.org/android_frameworks_av refs/changes/36/14936/1 && git cherry-pick FETCH_HEAD
+git fetch https://gerrit.omnirom.org/android_frameworks_av refs/changes/37/14937/1 && git cherry-pick FETCH_HEAD
+git fetch https://gerrit.omnirom.org/android_frameworks_av refs/changes/38/14938/1 && git cherry-pick FETCH_HEAD
+git fetch https://gerrit.omnirom.org/android_frameworks_av refs/changes/39/14939/1 && git cherry-pick FETCH_HEAD
+git fetch https://gerrit.omnirom.org/android_frameworks_av refs/changes/40/14940/1 && git cherry-pick FETCH_HEAD
+git fetch https://gerrit.omnirom.org/android_frameworks_av refs/changes/41/14941/1 && git cherry-pick FETCH_HEAD
+git fetch https://gerrit.omnirom.org/android_frameworks_av refs/changes/42/14942/1 && git cherry-pick FETCH_HEAD
+git fetch https://gerrit.omnirom.org/android_frameworks_av refs/changes/43/14943/2 && git cherry-pick FETCH_HEAD
+git fetch https://gerrit.omnirom.org/android_frameworks_av refs/changes/44/14944/1 && git cherry-pick FETCH_HEAD
+git fetch https://gerrit.omnirom.org/android_frameworks_av refs/changes/45/14945/1 && git cherry-pick FETCH_HEAD
+echo "last conflicts"
+git fetch https://gerrit.omnirom.org/android_frameworks_av refs/changes/82/15682/1 && git cherry-pick FETCH_HEAD
+git fetch https://gerrit.omnirom.org/android_frameworks_av refs/changes/83/15683/1 && git cherry-pick FETCH_HEAD
+git fetch https://gerrit.omnirom.org/android_frameworks_av refs/changes/84/15684/1 && git cherry-pick FETCH_HEAD
+git fetch https://gerrit.omnirom.org/android_frameworks_av refs/changes/85/15685/1 && git cherry-pick FETCH_HEAD
+git fetch https://gerrit.omnirom.org/android_frameworks_av refs/changes/86/15686/1 && git cherry-pick FETCH_HEAD
+git fetch https://gerrit.omnirom.org/android_frameworks_av refs/changes/87/15687/1 && git cherry-pick FETCH_HEAD
+git fetch https://gerrit.omnirom.org/android_frameworks_av refs/changes/88/15688/1 && git cherry-pick FETCH_HEAD
+git fetch https://gerrit.omnirom.org/android_frameworks_av refs/changes/89/15689/1 && git cherry-pick FETCH_HEAD
+git fetch https://gerrit.omnirom.org/android_frameworks_av refs/changes/90/15690/1 && git cherry-pick FETCH_HEAD
+git fetch https://gerrit.omnirom.org/android_frameworks_av refs/changes/91/15691/1 && git cherry-pick FETCH_HEAD
+git fetch https://gerrit.omnirom.org/android_frameworks_av refs/changes/92/15692/1 && git cherry-pick FETCH_HEAD
+git fetch https://gerrit.omnirom.org/android_frameworks_av refs/changes/93/15693/1 && git cherry-pick FETCH_HEAD
+echo "----------------------------------------"
+echo "Limit allocations to avoid out-of-memory"
+git fetch https://gerrit.omnirom.org/android_frameworks_av refs/changes/82/16182/1 && git cherry-pick FETCH_HEAD
+echo "----------------------------------------"
+echo "DO NOT MERGE NuCachedSource2: fix possible erroneous early free"
+git fetch https://gerrit.omnirom.org/android_frameworks_av refs/changes/83/16183/1 && git cherry-pick FETCH_HEAD
+echo "----------------------------------------"
+echo "DO NOT MERGE Fix vulnerability in mediaserver"
+git fetch https://gerrit.omnirom.org/android_frameworks_av refs/changes/84/16184/1 && git cherry-pick FETCH_HEAD
+echo "----------------------------------------"
+echo "DO NOT MERGE stagefright: fix AMessage::FromParcel"
+git fetch https://gerrit.omnirom.org/android_frameworks_av refs/changes/85/16185/1 && git cherry-pick FETCH_HEAD
+echo "----------------------------------------"
+echo "Don't crash when there's no conceal frame"
+git fetch https://gerrit.omnirom.org/android_frameworks_av refs/changes/86/16186/1 && git cherry-pick FETCH_HEAD
+echo "----------------------------------------"
+echo "MPEG4Extractor: ensure buffer size is not less than 8 for LastCommentData."
+git fetch https://gerrit.omnirom.org/android_frameworks_av refs/changes/87/16187/1 && git cherry-pick FETCH_HEAD
+echo "----------------------------------------"
+echo "Check NAL size before use"
+git fetch https://gerrit.omnirom.org/android_frameworks_av refs/changes/88/16188/1 && git cherry-pick FETCH_HEAD
+echo "----------------------------------------"
+echo "ID3: check possible integer overflow for extendedHeaderSize and paddingSize."
+git fetch https://gerrit.omnirom.org/android_frameworks_av refs/changes/89/16189/1 && git cherry-pick FETCH_HEAD
+echo "----------------------------------------"
+echo "DO NOT MERGE - OMX: allow only secure codec to remotely call allocateBuffer"
+git fetch https://gerrit.omnirom.org/android_frameworks_av refs/changes/90/16190/1 && git cherry-pick FETCH_HEAD
+echo "----------------------------------------"
+echo "DO NOT MERGE - AudioFlinger: Clear record buffers when starting RecordThread"
+git fetch https://gerrit.omnirom.org/android_frameworks_av refs/changes/91/16191/1 && git cherry-pick FETCH_HEAD
+git push https://github.com/OMAP4-AOSP/android_frameworks_av.git HEAD:aosp-4.4
+cd ../..
+
+cd frameworks/base
+git checkout aosp-4.4
+git fetch https://gerrit.omnirom.org/android_frameworks_base refs/changes/72/10472/1 && git cherry-pick FETCH_HEAD
+git fetch https://gerrit.omnirom.org/android_frameworks_base refs/changes/74/10474/1 && git cherry-pick FETCH_HEAD
+git fetch https://gerrit.omnirom.org/android_frameworks_base refs/changes/73/10473/1 && git cherry-pick FETCH_HEAD
+git fetch https://gerrit.omnirom.org/android_frameworks_base refs/changes/80/14680/1 && git cherry-pick FETCH_HEAD
+git fetch https://gerrit.omnirom.org/android_frameworks_base refs/changes/81/14681/1 && git cherry-pick FETCH_HEAD
+git fetch https://gerrit.omnirom.org/android_frameworks_base refs/changes/82/14682/1 && git cherry-pick FETCH_HEAD
+git fetch https://gerrit.omnirom.org/android_frameworks_base refs/changes/64/14864/1 && git cherry-pick FETCH_HEAD
+git fetch https://gerrit.omnirom.org/android_frameworks_base refs/changes/65/14865/1 && git cherry-pick FETCH_HEAD
+git fetch https://gerrit.omnirom.org/android_frameworks_base refs/changes/46/14946/1 && git cherry-pick FETCH_HEAD
+echo "DO NOT MERGE - Backport of ag/748165 to klp-dev Security patch level in Settings"
+git fetch https://gerrit.omnirom.org/android_frameworks_base refs/changes/05/15605/2 && git cherry-pick FETCH_HEAD
+git push https://github.com/OMAP4-AOSP/android_frameworks_base.git HEAD:aosp-4.4
+cd ../..
+
+cd frameworks/native
+git checkout aosp-4.4
+git fetch https://gerrit.omnirom.org/android_frameworks_native refs/changes/91/14691/1 && git cherry-pick FETCH_HEAD
+git fetch https://gerrit.omnirom.org/android_frameworks_native refs/changes/92/14692/1 && git cherry-pick FETCH_HEAD
+echo "----------------------------------------"
+echo "add number constraint for samples per MotionEvent"
+git fetch https://gerrit.omnirom.org/android_frameworks_native refs/changes/92/16192/1 && git cherry-pick FETCH_HEAD
+echo "----------------------------------------"
+echo "DO NOT MERGE: fix build breakage"
+git fetch https://gerrit.omnirom.org/android_frameworks_native refs/changes/93/16193/1 && git cherry-pick FETCH_HEAD
+echo "----------------------------------------"
+echo "DO NOT MERGE: fix build try #2"
+git fetch https://gerrit.omnirom.org/android_frameworks_native refs/changes/94/16194/1 && git cherry-pick FETCH_HEAD
+echo "----------------------------------------"
+git push https://github.com/OMAP4-AOSP/android_frameworks_native.git HEAD:aosp-4.4
+cd ../..
+
+cd frameworks/opt/telephony
+git checkout -b aosp-4.4
+git fetch https://gerrit.omnirom.org/android_frameworks_opt_telephony refs/changes/93/14693/2 && git cherry-pick FETCH_HEAD
+git push https://github.com/OMAP4-AOSP/android_frameworks_opt_telephony.git HEAD:aosp-4.4
+cd ../../..
+
+
+cd system/core
+git checkout -b aosp-4.4
+git fetch https://gerrit.omnirom.org/android_system_core refs/changes/79/14679/1 && git cherry-pick FETCH_HEAD
+git fetch https://gerrit.omnirom.org/android_system_core refs/changes/14/14914/1 && git cherry-pick FETCH_HEAD
+git fetch https://gerrit.omnirom.org/android_system_core refs/changes/15/14915/1 && git cherry-pick FETCH_HEAD
+git push https://github.com/OMAP4-AOSP/android_system_core.git HEAD:aosp-4.4
+cd ../..
+
+
+cd external/skia
+git checkout -b aosp-4.4
+git fetch https://gerrit.omnirom.org/android_external_skia refs/changes/69/10469/1 && git cherry-pick FETCH_HEAD
+git fetch https://gerrit.omnirom.org/android_external_skia refs/changes/71/10471/1 && git cherry-pick FETCH_HEAD
+git fetch https://gerrit.omnirom.org/android_external_skia refs/changes/70/10470/1 && git cherry-pick FETCH_HEAD
+git fetch https://gerrit.omnirom.org/android_external_skia refs/changes/13/14913/1 && git cherry-pick FETCH_HEAD
+echo "----------------------------------------"
+echo "Remove SI8_opaque_D32_nofilter_DX_arm DO NOT MERGE"
+git fetch https://gerrit.omnirom.org/android_external_skia refs/changes/95/16195/1 && git cherry-pick FETCH_HEAD
+echo "----------------------------------------"
+echo "Fix removal of SI8_opaque_D32_nofilter_DX_arm"
+git fetch https://gerrit.omnirom.org/android_external_skia refs/changes/96/16196/1 && git cherry-pick FETCH_HEAD
+echo "----------------------------------------"
+git push https://github.com/OMAP4-AOSP/android_external_skia.git HEAD:aosp-4.4
+
+cd ../..
+
+
+cd packages/apps/Mms
+git checkout -b aosp-4.4
+git fetch https://gerrit.omnirom.org/android_packages_apps_Mms refs/changes/63/14863/2 && git cherry-pick FETCH_HEAD
+git push https://github.com/OMAP4-AOSP/android_packages_apps_Mms.git HEAD:aosp-4.4
+
+cd ../../..
+
+cd packages/apps/Settings
+git checkout -b aosp-4.4
+git fetch https://gerrit.omnirom.org/android_packages_apps_Settings refs/changes/75/10475/1 && git cherry-pick FETCH_HEAD
+echo "DO NOT MERGE - Backport of ag/748147 - Security Patch Level in Settings CL#3/3"
+git fetch https://gerrit.omnirom.org/android_packages_apps_Settings refs/changes/08/15608/3 && git cherry-pick FETCH_HEAD
+echo "----------------------------------------"
+echo "Add translations for Security Patch Level."
+git fetch https://gerrit.omnirom.org/android_packages_apps_Settings refs/changes/62/15662/2 && git cherry-pick FETCH_HEAD
+git push https://github.com/OMAP4-AOSP/android_packages_apps_Settings.git HEAD:aosp-4.4
+cd ../../..
+
+cd external/bluetooth/bluedroid
+git checkout -b aosp-4.4
+git fetch https://gerrit.omnirom.org/android_external_bluetooth_bluedroid refs/changes/62/14862/1 && git cherry-pick FETCH_HEAD
+echo "----------------------------------------"
+echo "DO NOT MERGE - Add proper checks for PAN & BNEP in BD stack"
+git fetch https://gerrit.omnirom.org/android_external_bluetooth_bluedroid refs/changes/97/16197/1 && git cherry-pick FETCH_HEAD
+echo "----------------------------------------"
+git push https://github.com/OMAP4-AOSP/android_external_bluetooth_bluedroid.git HEAD:aosp-4.4
+cd ../../..
+
+
+cd external/openssl
+git checkout -b aosp-4.4
+git fetch https://gerrit.omnirom.org/android_external_openssl refs/changes/60/14860/1 && git cherry-pick FETCH_HEAD
+git push https://github.com/OMAP4-AOSP/android_external_openssl.git HEAD:aosp-4.4
+cd ../..
+
+
+cd external/chromium_org/third_party/openssl
+git checkout -b aosp-4.4
+git fetch https://gerrit.omnirom.org/android_external_chromium_org_third_party_openssl refs/changes/61/14861/1 && git cherry-pick FETCH_HEAD
+git push https://github.com/OMAP4-AOSP/android_external_chromium_org_third_party_openssl.git HEAD:aosp-4.4
+cd ../../../..
