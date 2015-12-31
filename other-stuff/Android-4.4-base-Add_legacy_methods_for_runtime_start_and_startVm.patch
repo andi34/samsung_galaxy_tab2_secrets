@@ -1,0 +1,79 @@
+From d140063585efc03ec0d2ad771631aaeb94a01c4a Mon Sep 17 00:00:00 2001
+From: Stefan Berger <s.berger81@gmail.com>
+Date: Sun, 15 Nov 2015 12:35:59 +0100
+Subject: [PATCH] base: Add legacy methods for runtime start() and startVm()
+
+These methods have been changed due to this October security patch:
+https://android.googlesource.com/platform/frameworks/base.git/+/d4d3181d013f8d9b96de8e396b029f8a418894a7%5E!/
+
+However, some frameworks (e.g. Xposed) still rely on the previous definitions,
+so introduce legacy method stubs which in turn call the updated start() and
+startVm() methods.
+
+Change-Id: Ib4622ae8b475e70a12f0806daafab55077cfa0ec
+---
+
+diff --git a/core/jni/AndroidRuntime.cpp b/core/jni/AndroidRuntime.cpp
+index f531a5b..c3fc954 100644
+--- a/core/jni/AndroidRuntime.cpp
++++ b/core/jni/AndroidRuntime.cpp
+@@ -432,6 +432,19 @@
+  *
+  * Returns 0 on success.
+  */
++int AndroidRuntime::startVm(JavaVM** pJavaVM, JNIEnv** pEnv)
++{
++    return startVm(pJavaVM, pEnv, false);
++}
++
++/*
++ * Start the Dalvik Virtual Machine.
++ *
++ * Various arguments, most determined by system properties, are passed in.
++ * The "mOptions" vector is updated.
++ *
++ * Returns 0 on success.
++ */
+ int AndroidRuntime::startVm(JavaVM** pJavaVM, JNIEnv** pEnv, bool zygote)
+ {
+     int result = -1;
+@@ -806,6 +819,19 @@
+  * Passes the main function two arguments, the class name and the specified
+  * options string.
+  */
++void AndroidRuntime::start(const char* className, const char* options)
++{
++    start(className, options, false);
++}
++
++/*
++ * Start the Android runtime.  This involves starting the virtual machine
++ * and calling the "static void main(String[] args)" method in the class
++ * named by "className".
++ *
++ * Passes the main function two arguments, the class name and the specified
++ * options string.
++ */
+ void AndroidRuntime::start(const char* className, const char* options, bool zygote)
+ {
+     ALOGD("\n>>>>>> AndroidRuntime START %s <<<<<<\n",
+diff --git a/include/android_runtime/AndroidRuntime.h b/include/android_runtime/AndroidRuntime.h
+index e8e869d..fa09643 100644
+--- a/include/android_runtime/AndroidRuntime.h
++++ b/include/android_runtime/AndroidRuntime.h
+@@ -64,6 +64,7 @@
+ 
+     int addVmArguments(int argc, const char* const argv[]);
+ 
++    void start(const char *classname, const char* options);
+     void start(const char *classname, const char* options, bool zygote);
+ 
+     void exit(int code);
+@@ -116,6 +117,7 @@
+ private:
+     static int startReg(JNIEnv* env);
+     void parseExtraOpts(char* extraOptsBuf);
++    int startVm(JavaVM** pJavaVM, JNIEnv** pEnv);
+     int startVm(JavaVM** pJavaVM, JNIEnv** pEnv, bool zygote);
+ 
+     Vector<JavaVMOption> mOptions;
