@@ -1,0 +1,61 @@
+From d4313ca8f121ba06095578fb5aee6ac0b90a6385 Mon Sep 17 00:00:00 2001
+From: Daniel Hillenbrand <codeworkx@cyanogenmod.org>
+Date: Wed, 1 May 2013 19:15:46 +0200
+Subject: [PATCH] native: add flag to disable legacy sensors fusion
+
+Causes problems on all p31xx devices.
+http://pastebin.com/PabjFVWP
+
+Change-Id: Iac9a913e0984d7e9e419772215d3fb3d1a0cb5e8
+---
+ services/sensorservice/Android.mk        | 4 ++++
+ services/sensorservice/SensorService.cpp | 5 +++++
+ 2 files changed, 9 insertions(+)
+
+diff --git a/services/sensorservice/Android.mk b/services/sensorservice/Android.mk
+index c948bcd..11fcb5e 100644
+--- a/services/sensorservice/Android.mk
++++ b/services/sensorservice/Android.mk
+@@ -35,6 +35,10 @@ LOCAL_SHARED_LIBRARIES := \
+ 	libui \
+ 	libgui
+ 
++ifneq ($(BOARD_USE_LEGACY_SENSORS_FUSION),false)
++    LOCAL_CFLAGS += -DUSE_LEGACY_SENSORS_FUSION
++endif
++
+ ifneq ($(BOARD_SYSFS_LIGHT_SENSOR),)
+     LOCAL_CFLAGS += -DSYSFS_LIGHT_SENSOR=\"$(BOARD_SYSFS_LIGHT_SENSOR)\"
+ endif
+diff --git a/services/sensorservice/SensorService.cpp b/services/sensorservice/SensorService.cpp
+index b8c2827..7538236 100644
+--- a/services/sensorservice/SensorService.cpp
++++ b/services/sensorservice/SensorService.cpp
+@@ -49,9 +49,12 @@
+ #include "RotationVectorSensor2.h"
+ #include "SensorFusion.h"
+ #include "SensorService.h"
++
++#ifdef USE_LEGACY_SENSORS_FUSION
+ #include "legacy/LegacyGravitySensor.h"
+ #include "legacy/LegacyLinearAccelerationSensor.h"
+ #include "legacy/LegacyRotationVectorSensor.h"
++#endif
+ 
+ namespace android {
+ // ---------------------------------------------------------------------------
+@@ -126,12 +129,14 @@ void SensorService::onFirstRef()
+                 registerVirtualSensor( new OrientationSensor() );
+                 registerVirtualSensor( new CorrectedGyroSensor(list, count) );
+             }
++#ifdef USE_LEGACY_SENSORS_FUSION
+             else
+             {
+                 registerVirtualSensor( new LegacyRotationVectorSensor() );
+                 registerVirtualSensor( new LegacyGravitySensor(list, count) );
+                 registerVirtualSensor( new LegacyLinearAccelerationSensor(list, count) );
+             }
++#endif
+ 
+             // build the sensor list returned to users
+             mUserSensorList = mSensorList;
