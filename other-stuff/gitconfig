@@ -11,4 +11,4 @@
 [http]
 	postBuffer = 2M
 [credential]
-	helper = cache
+        helper = cache --timeout 7200
