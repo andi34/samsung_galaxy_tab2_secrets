@@ -1,0 +1,21 @@
+# adds espresso-common on top of omap4-common repo
+cd device/samsung/espresso-common
+git remote add omap4  https://github.com/CyanogenMod/android_device_samsung_omap4-common.git
+git fetch omap4
+git pull --rebase omap4 cm-12.1
+resolve conflict #1
+git rebase --continue
+resolve conflict #2...repeat rebase command and conflict resolution
+git push ssh://Android-Andi@review.cyanogenmod.org:29418/CyanogenMod/android_device_samsung_espresso-common HEAD:refs/for/cm-12.1
+That sequence above ends in that being merged and pushed
+Just continue through each resolve and rebase --continue
+
+# adds omap4-common on top of espresso-common repo
+cd device/samsung/omap4-common
+git remote add espresso https://github.com/CyanogenMod/android_device_samsung_espresso-common.git
+git fetch espresso
+git pull --rebase espresso cm-12.1
+resolve conflict #1
+git rebase --continue
+resolve conflict #2...repeat rebase command and conflict resolution
+git push ssh://Android-Andi@review.cyanogenmod.org:29418/CyanogenMod/android_device_samsung_espresso-common HEAD:refs/for/cm-12.1
