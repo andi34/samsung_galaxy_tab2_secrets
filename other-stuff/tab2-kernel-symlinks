@@ -1,0 +1,79 @@
+mv cyanogenmod_p3100_defconfig p3100_defconfig
+mv cyanogenmod_p3110_defconfig p3110_defconfig
+mv cyanogenmod_p5100_defconfig p5100_defconfig
+mv cyanogenmod_p5110_defconfig p5110_defconfig
+
+ln -s espresso_defconfig p3100_defconfig
+ln -s espresso_defconfig p3110_defconfig
+ln -s espresso_defconfig p5100_defconfig
+ln -s espresso_defconfig p5110_defconfig
+
+ln -s espresso_defconfig custom_p3100_defconfig
+ln -s espresso_defconfig custom_p3110_defconfig
+ln -s espresso_defconfig custom_p5100_defconfig
+ln -s espresso_defconfig custom_p5110_defconfig
+
+ln -s espresso_defconfig slim_p3100_defconfig
+ln -s espresso_defconfig slim_p3110_defconfig
+ln -s espresso_defconfig slim_p5100_defconfig
+ln -s espresso_defconfig slim_p5110_defconfig
+
+ln -s espresso_defconfig cyanogenmod_p3100_defconfig
+ln -s espresso_defconfig cyanogenmod_p3110_defconfig
+ln -s espresso_defconfig cyanogenmod_p5100_defconfig
+ln -s espresso_defconfig cyanogenmod_p5110_defconfig
+
+------------------------------
+
+mv slim_p3100_defconfig p3100_defconfig
+mv slim_p3110_defconfig p3110_defconfig
+mv slim_p5100_defconfig p5100_defconfig
+mv slim_p5110_defconfig p5110_defconfig
+
+rm -rf cyanogenmod_p*
+
+ln -s p3100_defconfig slim_p3100_defconfig
+ln -s p3110_defconfig slim_p3110_defconfig
+ln -s p5100_defconfig slim_p5100_defconfig
+ln -s p5110_defconfig slim_p5110_defconfig
+
+ln -s p3100_defconfig cyanogenmod_p3100_defconfig
+ln -s p3110_defconfig cyanogenmod_p3110_defconfig
+ln -s p5100_defconfig cyanogenmod_p5100_defconfig
+ln -s p5110_defconfig cyanogenmod_p5110_defconfig
+
+
+--------------
+
+mv custom_p3100_defconfig p3100_defconfig
+mv custom_p3110_defconfig p3110_defconfig
+mv custom_p5100_defconfig p5100_defconfig
+mv custom_p5110_defconfig p5110_defconfig
+
+ln -s p3100_defconfig custom_p3100_defconfig
+ln -s p3110_defconfig custom_p3110_defconfig
+ln -s p5100_defconfig custom_p5100_defconfig
+ln -s p5110_defconfig custom_p5110_defconfig
+
+
+------------
+
+ln -s espresso_defconfig cyanogenmod_p3100_defconfig
+ln -s espresso_defconfig cyanogenmod_p3110_defconfig
+ln -s espresso_defconfig cyanogenmod_p5100_defconfig
+ln -s espresso_defconfig cyanogenmod_p5110_defconfig
+
+ln -s espresso_defconfig slim_p3100_defconfig
+ln -s espresso_defconfig slim_p3110_defconfig
+ln -s espresso_defconfig slim_p5100_defconfig
+ln -s espresso_defconfig slim_p5110_defconfig
+
+ln -s espresso_defconfig custom_p3100_defconfig
+ln -s espresso_defconfig custom_p3110_defconfig
+ln -s espresso_defconfig custom_p5100_defconfig
+ln -s espresso_defconfig custom_p5110_defconfig
+
+ln -s espresso_defconfig p3100_defconfig
+ln -s espresso_defconfig p3110_defconfig
+ln -s espresso_defconfig p5100_defconfig
+ln -s espresso_defconfig p5110_defconfig
