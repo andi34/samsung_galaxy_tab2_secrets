@@ -1,0 +1,33 @@
+git checkout GT-P3110_JB_Opensource
+git checkout GT-P3110_JB_Opensource-WIP
+git checkout GT-P3110_JB_Opensource_Update1
+git checkout GT-P5113_NA_JB_Opensource_Update2
+git checkout GT-P5110_JB_Opensource_Update1
+git checkout GT-P5110_JB_Opensource
+git checkout GT-P5100_SEA_JB_Opensource
+git checkout GT-P5100_JB_Opensource_Update3
+git checkout GT-P5100_JB_Opensource_Update2
+git checkout GT-P5100_JB_Opensource_Update1
+git checkout GT-P3113_NA_JB_Opensource_Update2
+git checkout GT-P3110_SEA_JB_Opensource
+git checkout GT-P3100_JB_Opensource_Update3
+git checkout GT-P3100_JB_Opensource_Update2
+git checkout GT-P3100_JB_Opensource
+git checkout GT-P5110_JB_Opensource_Update2
+
+  GT-P3100_JB_Opensource
+  GT-P3100_JB_Opensource_Update2
+  GT-P3100_JB_Opensource_Update3
+  GT-P3110_JB_Opensource
+  GT-P3110_JB_Opensource-WIP
+  GT-P3110_JB_Opensource_Update1
+  GT-P3110_SEA_JB_Opensource
+  GT-P3113_NA_JB_Opensource_Update2
+  GT-P5100_JB_Opensource_Update1
+  GT-P5100_JB_Opensource_Update2
+  GT-P5100_JB_Opensource_Update3
+  GT-P5100_SEA_JB_Opensource
+  GT-P5110_JB_Opensource
+  GT-P5110_JB_Opensource_Update1
+  GT-P5110_JB_Opensource_Update2
+  GT-P5113_NA_JB_Opensource_Update2
