@@ -1,0 +1,16 @@
+download 3.82 from http://ftp.gnu.org/gnu/make/
+extract it and cd into the path,
+now run:
+./configure
+./build.sh
+sudo mv make `which make`
+make --version
+
+"I wouldn't replace global make
+Put it in my local bin folder.
+It'll take priority without breaking other package dependencies."
+
+On arch
+Arch uses python 3
+Well to use python 2 all I did was
+ln -s $(which python2) ~/bin/python
