@@ -1,0 +1,14 @@
+[user]
+	name = NAME
+	email = EMAIL
+[commiter]
+	name = NAME
+	email = EMAIL
+[color]
+	ui = auto
+[core]
+	filemode = false
+[http]
+	postBuffer = 2M
+[credential]
+	helper = cache
