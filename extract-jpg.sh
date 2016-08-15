@@ -4,8 +4,8 @@
 # Ketut P. Kumajaya <ketut.kumajaya @ xda-developers.com>, Sept 2012
 # http://z4ziggy.wordpress.com/2010/09/18/looking-into-param-lfs-file/
 
-starts=(`grep -Pabo $'\xFF\xD8' $1 | cut -f 1 -d :`)
-ends=(`grep -Pabo $'\xFF\xD9' $1 | cut -f 1 -d :`)
+starts=(`grep -abo $'\xFF\xD8' $1 | cut -f 1 -d :`)
+ends=(`grep -abo $'\xFF\xD9' $1 | cut -f 1 -d :`)
 
 echo "count=$((${#starts[@]}))" > mapping.txt
 for (( i = 0 ; i < ${#starts[@]} ; i++ )); do
