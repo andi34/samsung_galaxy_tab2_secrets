@@ -90,3 +90,9 @@ or run the following line using Terminal emulator:
 $ su
 (grand root access)
 $ insmod /system/lib/modules/sec_dock_keyboard.ko
+
+8. DEVS ONLY: Emergency Call Test
+setprop ril.test.emergencynumber 911:1234567890
+
+Sanity test your devices (set it to your house number or w/e, instead of 1234567890).
+If it works with the number you set, it will work with 911/112/whatever else as well.
