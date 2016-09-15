@@ -14,3 +14,12 @@ On arch
 Arch uses python 3
 Well to use python 2 all I did was
 ln -s $(which python2) ~/bin/python
+
+
+-------
+
+./configure
+./build.sh
+sudo mv make ~/bin/
+ln -s $(which make) ~/bin/make
+make --version
