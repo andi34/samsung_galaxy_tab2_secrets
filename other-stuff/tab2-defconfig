@@ -1,3 +1,13 @@
+export SUBARCH=arm
+export ARCH=arm
+make mrproper
+make espresso_defconfig
+make savedefconfig
+cp -f defconfig arch/arm/configs/espresso_defconfig
+make mrproper
+
+--------------
+
 mv cyanogenmod_p3100_defconfig p3100_defconfig
 mv cyanogenmod_p3110_defconfig p3110_defconfig
 mv cyanogenmod_p5100_defconfig p5100_defconfig
