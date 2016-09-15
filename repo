@@ -1,0 +1,12 @@
+On
+"fatal: This operation must be run in
+a work tree
+(...)
+    raise GitError("cannot initialize work tree")
+error.GitError: cannot initialize work tree "
+
+Run:
+repo --trace sync -l
+
+You'll see the failing source, delete it in your envoirement and inside ".repo/projects",
+after that repo sync again.
