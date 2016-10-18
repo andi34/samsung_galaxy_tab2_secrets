@@ -1,0 +1,19 @@
+1. Flash NEXT kernel
+2. Connect to a computer with adb binary installed
+3. Long press POWER button to force it to switch to charge mode
+4. Issue "adb shell dmesg > /sdcard/dmesg.txt"
+5. Issue "adb pull /sdcard/dmesg.txt" to pull dmesg.txt from device, upload 
+it somewhere
+
+Flash the new ducati, boot to charge mode, over "adb shell":
+1. "mount -t ext4 /dev/block/mmcblk0p9 /system"
+2. "mount -t ext4 /dev/block/mmcblk0p11 /preload"
+3. "mount -t ext4 /dev/block/mmcblk0p7 /cache"
+4. "mount -t ext4 /dev/block/mmcblk0p1 /efs"
+5. "mount -t ext4 /dev/block/mmcblk0p10 /data"
+
+If all partitions mounted without problem, umount all partition. An example 
+step: "umount /system" and then try check every partition, an example step: 
+"e2fsck -vf /dev/block/mmcblk0p9".
+
+If you got any error message, inform it to me.
