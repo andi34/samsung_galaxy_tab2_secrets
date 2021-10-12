@@ -2,8 +2,8 @@
 
 Install some requirements:
 ```sh
-apt-get install git
-apt-get install openjdk-7-jre
+sudo apt-get install git
+sudo apt-get install openjdk-8-jdk
 ```
 
 if you want to create virtual hosts
@@ -18,15 +18,15 @@ mkdir -p gerrit_page/lib
 mkdir -p gerrit_page/plugins
 ```
 
-Download gerrit and github oauth plugin
+Download gerrit and github oauth plugin (https://gerrit-ci.gerritforge.com/job/plugin-github-mvn-stable-3.4/)
 ```sh
 cd gerrit_page/bin
-wget  https://www.gerritcodereview.com/download/gerrit-2.13.6.war
-mv gerrit-2.13.6.war gerrit.war
+wget https://gerrit-releases.storage.googleapis.com/gerrit-3.4.1.war
+mv gerrit-3.4.1.war gerrit.war
 cd ../lib
-wget https://gerrit-ci.gerritforge.com/job/plugin-github-mvn-stable-2.13/lastSuccessfulBuild/artifact/github-oauth/target/github-oauth-2.13.jar
+wget https://gerrit-ci.gerritforge.com/job/plugin-github-mvn-stable-3.4/lastSuccessfulBuild/artifact/github-oauth/target/github-oauth-3.4.0-rc0.jar
 cd ../plugins
-wget https://gerrit-ci.gerritforge.com/job/plugin-github-mvn-stable-2.13/lastSuccessfulBuild/artifact/github-plugin/target/github-plugin-2.13.jar
+wget https://gerrit-ci.gerritforge.com/job/plugin-github-mvn-stable-3.4/lastSuccessfulBuild/artifact/github-plugin/target/github-plugin-3.4.0-rc0.jar
 cd ..
 ```
 
